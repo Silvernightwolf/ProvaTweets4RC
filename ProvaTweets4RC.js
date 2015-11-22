@@ -31,10 +31,10 @@ var SECRET = '';
 
 var access_token;
 
-app.get('/', function (req, res) {
+app.get('/', function(req, res) {
 	console.log('Someone\'s here!');
 	res.send(HOME);
-});
+} );
 
 app.get('/authenticate', function(req, res) {
 	console.log('richiesta autorizzazione...');
@@ -47,7 +47,7 @@ app.get('/authenticate', function(req, res) {
 	var auth_string = auth_string_generate();
 	var auth_en = new Buffer(auth_string).toString('base64');
 
-  var url = 'https://api.twitter.com/oauth2/token';
+	var url = 'https://api.twitter.com/oauth2/token';
 	var headers = { 
 		'Authorization': 'Basic '.concat(auth_en),
     'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
@@ -55,9 +55,9 @@ app.get('/authenticate', function(req, res) {
 	
 	var body1 = 'grant_type=client_credentials';
   
-  var request = require('request');
+	var request = require('request');
 
-  console.log('invio richiesta auth...')
+	console.log('invio richiesta auth...')
 	request.post( {
 			headers: headers,
 			url:     url,
@@ -85,7 +85,7 @@ app.get('/retrieveLastTweets', function(req, res) {
 
 		var request = require('request');
 
-    console.log('invio richiesta tweets...');
+    	console.log('invio richiesta tweets...');
 		request.get( {
 			headers: headers,
 			url:     url,
@@ -104,7 +104,7 @@ app.get('/retrieveLastTweets', function(req, res) {
 var server = app.listen(4242, function() {
 	console.log(server.address());
 	var host = server.address().address;
-  var port = server.address().port;
+	var port = server.address().port;
 
  	console.log('Example app listening at http://%s:%s', host, port);
-});
+} );

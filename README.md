@@ -1,2 +1,2 @@
 # ProvaTweets4RC
-Experiments for RC
+Experimenting and playing with twitter API for RC

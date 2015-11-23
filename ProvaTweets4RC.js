@@ -26,6 +26,7 @@ var tweetsList = function(r) {
 	return TWEET_RES_PRE + tweets(r) + TWEET_RES_POST;
 };
 
+//inserire qui KEY e SECRET ottenuti registrando l'applicazione su twitter
 var KEY = '';
 var SECRET = '';
 

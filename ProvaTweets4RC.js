@@ -61,7 +61,7 @@ app.get('/authenticate', function(req, res) {
 	console.log('invio richiesta auth...')
 	request.post( {
 			headers: headers,
-			url:     url,
+			url: url,
 			body: body1
 		}, function(error, response, body) {
 			var body_json = JSON.parse(body);
@@ -89,9 +89,11 @@ app.get('/retrieveLastTweets', function(req, res) {
     	console.log('invio richiesta tweets...');
 		request.get( {
 			headers: headers,
-			url:     url,
-			//AGGIUNGERE trasferimento parametri user e count
-			qs: {screen_name: user, count: count}
+			url: url,
+			qs: {
+				screen_name: user,
+				count: count
+			}
 		}, function(error, response, body) {
 			var body_json = JSON.parse(body);
 			res.send(tweetsList(body_json));

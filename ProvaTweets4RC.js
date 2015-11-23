@@ -50,7 +50,7 @@ app.get('/authenticate', function(req, res) {
 	var url = 'https://api.twitter.com/oauth2/token';
 	var headers = { 
 		'Authorization': 'Basic '.concat(auth_en),
-    'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    	'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
 	};
 	
 	var body1 = 'grant_type=client_credentials';
